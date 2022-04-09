@@ -1,0 +1,14 @@
+name: LernenMitTMB
+authors:
+  - XenoDEV
+  - GondiiTMB
+  - ClashiTMB
+  - MaletteTMB
+
+version: 1.0
+
+main: tmb.learn.main.Main
+
+commands:
+  heal:
+    description: Heile dich oder andere Spieler
