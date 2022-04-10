@@ -1,6 +1,6 @@
 name: LernenMitTMB
 authors:
-  - XenoDEV
+  - XenoTMB
   - GondiiTMB
   - ClashiTMB
   - MaletteTMB
@@ -12,3 +12,17 @@ main: tmb.learn.main.Main
 commands:
   heal:
     description: Heile dich oder andere Spieler
+  r:
+    description: Reloade den Server
+  reload:
+    description: Reloade den Server
+  gm:
+    description: Setze deinen Gamemode um
+  gamemode:
+    description: Setze deinen Gamemode um
+  fly:
+    description: Setze deinen Flugmodus
+  spawn:
+    description: Teleportiere dich zum Spawn
+  build:
+    description: Setze deinen Baumodus um

@@ -1,9 +1,12 @@
 package tmb.learn.listener;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 public class DamageListener implements Listener {
 
     private static ArrayList<EntityType> entityList = new ArrayList<>();
+    private static ArrayList<Material> blockList = new ArrayList<>();
 
     @EventHandler
     public void onDamage(EntityDamageEvent e){
@@ -45,6 +49,25 @@ public class DamageListener implements Listener {
     }
 
     @EventHandler
+    public void handleEntityDamageByBlock(EntityDamageByBlockEvent e){
+        if(e.getEntity() instanceof Player){
+            Player p = (Player) e.getEntity();
+            if(e.getDamager().equals(null) || e.getCause().equals(null)) return;
+            Double damageAmount = e.getDamage();
+
+            Block block = e.getDamager();
+
+            for(int i = 0; i < blockList.size(); i++){
+                if(block.getType() == blockList.get(i)){
+                    p.sendMessage("§7Du hast §c" + damageAmount + " §7Schaden von einem §e" + blockList.get(i).name() + " §7bekommen");
+                }
+            }
+        }
+    }
+
+
+
+    @EventHandler
     public void handleEntitySpawn(EntitySpawnEvent e){
         putEntitysInArray(e.getEntity().getType());
     }
@@ -53,6 +76,10 @@ public class DamageListener implements Listener {
         if(!entityList.contains(entityType)) {
             entityList.add(entityType);
         }
+    }
+
+    public static void putBlocksInArray(){
+        blockList.add(Material.SAND);
     }
 
 }
