@@ -32,6 +32,9 @@ public class Main extends JavaPlugin {
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("spawn").setExecutor(new SpawnCommand());
         getCommand("build").setExecutor(new BuildCommand());
+        getCommand("ench").setExecutor(new EnchantCommand());
+        getCommand("enchant").setExecutor(new EnchantCommand());
+        getCommand("enchantment").setExecutor(new EnchantCommand());
 
         pluginManager.registerEvents(new DamageListener(), this);
         pluginManager.registerEvents(new ConnectionListener(), this);

@@ -26,3 +26,9 @@ commands:
     description: Teleportiere dich zum Spawn
   build:
     description: Setze deinen Baumodus um
+  ench:
+    description: Enchante deine Items
+  enchant:
+    description: Enchante deine Items
+  enchantment:
+    description: Enchante deine Items
