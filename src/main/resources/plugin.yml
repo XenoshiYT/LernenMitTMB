@@ -37,4 +37,10 @@ commands:
   hilfe:
     description: Schaue nach den Commands
   rename:
-    description: Schaue nach den Commands
+    description: Nenne das Item in deiner Hand um
+  sign:
+    description: Segniere das Item in deiner Hand
+  invsee:
+    description: Sehe dir das Inventar eines Spielers an
+  endersee:
+    description: Sehe dir die Enderchest eines Spielers an

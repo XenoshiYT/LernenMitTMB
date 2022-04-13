@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -23,17 +24,19 @@ public class SignCommand implements CommandExecutor {
                     SimpleDateFormat date = new SimpleDateFormat("dd.MM.yyyy");
                     String odate = date.format(new Date());
                     ItemStack itemStack = p.getInventory().getItemInMainHand();
-                    String name = null;
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    String name = "";
                     for(int i = 0; i < args.length; i++){
                         name = name + args[i] + " ";
                     }
 
-                    itemStack.getItemMeta().setLore(Arrays.asList("", name.replace("&", "§"), "§7-------------------------------------------", "§7Signiert von §e§l" + p.getName() + " §7am §a§l" + odate));
+                    itemMeta.setLore(Arrays.asList("", name.replace("&", "§"), "§7-------------------------------------------", "§7Signiert von §e§l" + p.getName() + " §7am §a§l" + odate));
+                    itemStack.setItemMeta(itemMeta);
                 }else{
                     p.sendMessage("§7Du hast kein richtiges Item in der Hand");
                 }
             }else{
-                p.sendMessage("§7Benutze den Command gefolgt: /rename <name>");
+                p.sendMessage("§7Benutze den Command gefolgt: /sign <name>");
             }
         }
 

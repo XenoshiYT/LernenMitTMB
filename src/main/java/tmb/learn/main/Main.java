@@ -38,6 +38,9 @@ public class Main extends JavaPlugin {
         getCommand("enchantment").setExecutor(new EnchantCommand());
         getCommand("hilfe").setExecutor(new HilfeCommand());
         getCommand("rename").setExecutor(new RenameCommand());
+        getCommand("sign").setExecutor(new SignCommand());
+        getCommand("endersee").setExecutor(new EnderseeCommand());
+        getCommand("invsee").setExecutor(new InvseeCommand());
 
         pluginManager.registerEvents(new DamageListener(), this);
         pluginManager.registerEvents(new ConnectionListener(), this);
