@@ -14,6 +14,8 @@ commands:
     description: Heile dich oder andere Spieler
   r:
     description: Reloade den Server
+  rl:
+    description: Reloade den Server
   reload:
     description: Reloade den Server
   gm:
@@ -32,3 +34,7 @@ commands:
     description: Enchante deine Items
   enchantment:
     description: Enchante deine Items
+  hilfe:
+    description: Schaue nach den Commands
+  rename:
+    description: Schaue nach den Commands

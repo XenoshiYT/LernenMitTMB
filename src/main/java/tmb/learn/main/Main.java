@@ -27,6 +27,7 @@ public class Main extends JavaPlugin {
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("reload").setExecutor(new RealoadCommand());
         getCommand("r").setExecutor(new RealoadCommand());
+        getCommand("rl").setExecutor(new RealoadCommand());
         getCommand("gm").setExecutor(new GamemodeCommand());
         getCommand("gamemode").setExecutor(new GamemodeCommand());
         getCommand("fly").setExecutor(new FlyCommand());
@@ -35,6 +36,8 @@ public class Main extends JavaPlugin {
         getCommand("ench").setExecutor(new EnchantCommand());
         getCommand("enchant").setExecutor(new EnchantCommand());
         getCommand("enchantment").setExecutor(new EnchantCommand());
+        getCommand("hilfe").setExecutor(new HilfeCommand());
+        getCommand("rename").setExecutor(new RenameCommand());
 
         pluginManager.registerEvents(new DamageListener(), this);
         pluginManager.registerEvents(new ConnectionListener(), this);
